@@ -220,4 +220,10 @@ class Norikra::WebUI::Handler < Sinatra::Base
       end
     end
   end
+
+  get '/json/engine_statistics' do
+    logging(:show, :json_engine_statistics) do
+      json engine.statistics
+    end
+  end
 end
